@@ -501,6 +501,14 @@ html {
   box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3);
 }
 
+.btn-small {
+  padding: 0.8rem 0.5rem;  /* más pequeño al - an */
+  font-size: 1rem;      /* letra más chica */
+  border-radius: 0.5rem;   /* esquinas un poco más reducidas */
+}
+
+
+
 .btn-secondary {
   background: transparent;
   color: var(--purple-600);
@@ -532,7 +540,7 @@ html {
 .service-icon-img,
 .author-avatar-img,
 .contact-icon-img {
-  width: 2rem;
+  width: 2srem;
   height: 2rem;
   border-radius: 0.375rem;
   object-fit: cover;
@@ -713,9 +721,12 @@ html {
   align-items: center;
   gap: 0.5rem;
   color: var(--gray-500);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
+    
 }
+
+
 
 .feature-icon-img {
   width: 1.5rem;       /* tamaño más pequeño */
