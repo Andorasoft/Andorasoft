@@ -6,8 +6,12 @@
   <title>Andorasoft | Da vida a tus ideas con software personalizado</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="logi-A.ico">
+
 </head>
 <body>
+
+
   <!-- Header -->
   <header id="navbar" class="header">
     <div class="container">
@@ -16,21 +20,50 @@
           <img src="andora.svg" alt="Andorasoft Logo" class="logo-img">
           <span class="logo-text">Andorasoft</span>
         </div>
+
         <nav class="nav">
           <ul>
+            <li><a href="#ini">Inicio</a></li>
             <li><a href="#services">Servicios</a></li>
             <li><a href="#about">Nosotros</a></li>
             <li><a href="#portfolio">Portafolio</a></li>
-            <li><a href="#contact">Contacto</a></li>
-          </ul>
+            <li><a href="#Contacto">Contacto</a></li>
+             </ul>
         </nav>
-        <button class="btn btn-primary">Comenzar</button>
+
+
+
+
+
+<!-- Botón Modo Oscuro -->
+<div class="dark-mode-toggle" id="darkModeToggle">
+  <!-- Icono Sol -->
+  <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+  </svg>
+
+  <!-- Icono Luna -->
+  <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+  </svg>
+
+  <!-- Esfera deslizante -->
+  <div class="toggle-slider"></div>
+</div>
+
+
+
+
+
+
+        <a href="#contact"> <button class="btn btn-primary">Comenzar</button></a>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section id="ini" class="hero">
     <div class="hero-bg-pattern"></div>
     <div class="container">
       <div class="hero-content">
@@ -45,22 +78,24 @@
           Desde el concepto hasta el despliegue, convertimos tu visión en realidad.
         </p>
         <div class="hero-buttons">
-          <button class="btn btn-primary btn-large">
-            Solicitar Cotización Gratuita →
-          </button>
-          <button class="btn btn-secondary btn-large">Ver Nuestro Trabajo</button>
+        <!-- Botón primario -->
+        <a href="https://wa.me/593963040153?text=Hola%20quiero%20una%20cotizaci%C3%B3n" target="_blank" class="btn btn-primary btn-large">
+         Solicitar Cotización Gratuita →</a>
+
+          <a href="#portfolio" class="btn btn-secondary btn-large">Ver Nuestro Trabajo</a>
+
         </div>
         <div class="hero-features">
           <div class="feature-item">
-            <img src="visto.jpeg" alt="Consulta gratuita" class="feature-icon-img">
+            <img src="visto.JPG" alt="Consulta gratuita" class="feature-icon-img">
             Consulta gratuita
           </div>
           <div class="feature-item">
-            <img src="visto.jpeg" alt="Garantía de 30 días" class="feature-icon-img">
+            <img src="visto.jpg" alt="Garantía de 30 días" class="feature-icon-img">
             Garantía de 30 días
           </div>
           <div class="feature-item">
-            <img src="visto.jpeg" alt="Entrega ágil" class="feature-icon-img">
+            <img src="visto.jpg" alt="Entrega ágil" class="feature-icon-img">
             Entrega ágil
           </div>
         </div>
@@ -128,25 +163,25 @@
       </div>
       <div class="features-grid">
         <div class="feature-card">
-          <img src="personal.png" alt="Soluciones Personalizadas" class="feature-icon-img">
+          <img src="personal.png" alt="Soluciones Personalizadas" class="feature-icon-img2">
           <h3>Soluciones Personalizadas</h3>
           <p>Cada proyecto es único. Creamos soluciones personalizadas que se adaptan perfectamente a las necesidades y objetivos de tu negocio.</p>
         </div>
 
         <div class="feature-card">
-          <img src="nave.png" alt="Stack Tecnológico" class="feature-icon-img">
+          <img src="nave.png" alt="Stack Tecnológico" class="feature-icon-img2">
           <h3>Stack Tecnológico Moderno</h3>
           <p>Utilizamos tecnologías y frameworks de vanguardia para asegurar que tu software sea a prueba del futuro y escalable.</p>
         </div>
 
         <div class="feature-card">
-          <img src="ray2.png" alt="Entrega Ágil" class="feature-icon-img">
+          <img src="ray2.png" alt="Entrega Ágil" class="feature-icon-img2">
           <h3>Entrega Ágil</h3>
           <p>Iteraciones rápidas, retroalimentación continua y despliegue rápido para llevar tu producto al mercado rápidamente.</p>
         </div>
 
         <div class="feature-card">
-          <img src="calida.png" alt="Garantía de Calidad" class="feature-icon-img">
+          <img src="calida.png" alt="Garantía de Calidad" class="feature-icon-img2">
           <h3>Garantía de Calidad</h3>
           <p>Procesos rigurosos de pruebas y control de calidad aseguran que tu software sea confiable y libre de errores.</p>
         </div>
@@ -168,7 +203,7 @@
           <div class="stars">⭐⭐⭐⭐⭐</div>
           <p>"Andorasoft transformó nuestro sistema obsoleto en una plataforma moderna y eficiente. La experiencia y dedicación del equipo superaron nuestras expectativas."</p>
           <div class="testimonial-author">
-            <img src="ando.jpg" alt="John Smith" class="author-avatar-img">
+            <img src="npc.svg" alt="John Smith" class="author-avatar-img">
             <div class="author-info">
               <strong>John Smith</strong>
               <span>CEO, TechCorp</span>
@@ -178,9 +213,9 @@
 
         <div class="testimonial-card">
           <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>"La aplicación móvil que construyeron para nosotros ha cambiado las reglas del juego. La participación del usuario aumentó en un 300% durante el primer mes de lanzamiento."</p>
+          <p>"La aplicación móvil que construyeron para nosotros ha cambiado las reglas del juego. La participación del usuario aumentó  durante el primer mes de lanzamiento."</p>
           <div class="testimonial-author">
-            <img src="ando.jpg" alt="Maria Johnson" class="author-avatar-img">
+            <img src="npc.svg" alt="Maria Johnson" class="author-avatar-img">
             <div class="author-info">
               <strong>Maria Johnson</strong>
               <span>Founder, StartupXYZ</span>
@@ -192,7 +227,7 @@
           <div class="stars">⭐⭐⭐⭐⭐</div>
           <p>"Profesionales, confiables e innovadores. Andorasoft entregó nuestra plataforma SaaS a tiempo y dentro del presupuesto. ¡Muy recomendado!"</p>
           <div class="testimonial-author">
-            <img src="ando.jpg" alt="Robert Brown" class="author-avatar-img">
+            <img src="npc.svg" alt="Robert Brown" class="author-avatar-img">
             <div class="author-info">
               <strong>Robert Brown</strong>
               <span>CTO, InnovateLab</span>
@@ -212,23 +247,28 @@
           Explora algunos de nuestros proyectos más recientes y ve cómo hemos ayudado a las empresas a alcanzar sus objetivos
         </p>
       </div>
+
       <div class="portfolio-grid">
-        <div class="portfolio-item">
+
+        
+         <div class="portfolio-item">
           <div class="portfolio-image">
-            <img src="ando.jpg" alt="E-commerce Platform">
+            <img src="comunicados.svg" alt="Website">
             <div class="portfolio-overlay"></div>
           </div>
           <div class="portfolio-content">
-            <div class="portfolio-badge purple">E-commerce</div>
-            <h3>Modern E-commerce Platform</h3>
-            <p>A full-featured online store with advanced analytics and inventory management.</p>
-            <button class="portfolio-btn">View Project</button>
+            <div class="portfolio-badge green">Website</div>
+            <h3>Comunicados Web</h3>
+            <p>Website de centro de psicologia para niños con problemas del aprendizaje y la concentración  .</p>
+            <a class="portfolio-btn" style="text-decoration: none;" target="_blank" href=https://comunicados.vercel.app/login">View Project</a>
           </div>
         </div>
 
+
+
         <div class="portfolio-item">
           <div class="portfolio-image">
-            <img src="logo.jpg" alt="Fitness Mobile App">
+            <img src="logo.jpg" alt="Website">
             <div class="portfolio-overlay"></div>
           </div>
           <div class="portfolio-content">
@@ -239,6 +279,8 @@
           </div>
         </div>
 
+
+
         <div class="portfolio-item">
           <div class="portfolio-image">
             <img src="ando.jpg" alt="SaaS Analytics Platform">
@@ -254,61 +296,15 @@
 
 
 
- <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img src="ando.jpg" alt="SaaS Analytics Platform">
-            <div class="portfolio-overlay"></div>
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-badge blue">SaaS</div>
-            <h3>Analytics SaaS Platform</h3>
-            <p>Comprehensive business intelligence platform with real-time data visualization.</p>
-            <button class="portfolio-btn">View Project</button>
-          </div>
-        </div>
-
-
-
-
-
-
-         <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img src="ando.jpg" alt="SaaS Analytics Platform">
-            <div class="portfolio-overlay"></div>
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-badge blue">SaaS</div>
-            <h3>Analytics SaaS Platform</h3>
-            <p>Comprehensive business intelligence platform with real-time data visualization.</p>
-            <button class="portfolio-btn">View Project</button>
-          </div>
-        </div>
-
-
- <div class="portfolio-item">
-          <div class="portfolio-image">
-            <img src="ando.jpg" alt="SaaS Analytics Platform">
-            <div class="portfolio-overlay"></div>
-          </div>
-          <div class="portfolio-content">
-            <div class="portfolio-badge blue">SaaS</div>
-            <h3>Analytics SaaS Platform</h3>
-            <p>Comprehensive business intelligence platform with real-time data visualization.</p>
-            <button class="portfolio-btn">View Project</button>
-          </div>
-        </div>
-
-
-
-
-
-
-
 
       </div>
     </div>
   </section>
+
+
+
+
+
 
   <!-- Contact Form Section -->
   <section id="contact" class="contact">
@@ -356,7 +352,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer id="Contacto" class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-main">
@@ -368,9 +364,9 @@
             tecnología de punta y soluciones innovadoras.
           </p>
           <div class="social-links">
-            <a href="#" class="social-link"><img src="git.png" alt="GitHub"></a>
-            <a href="#" class="social-link"><img src="inst.jpeg" alt="Instagram"></a>
-            <a href="#" class="social-link"><img src="ando.jpg" alt="LinkedIn"></a>
+            <a href="https://github.com/Andorasoft" target="_blank" class="social-link"><img src="github.svg" alt="GitHub"></a>
+            <a href="https://www.instagram.com/andorasoft?igsh=d3VvN295Z2ZuOG82" target="_blank" class="social-link"><img src="instagram.svg" alt="Instagram"></a>
+            <a href="#" target="_blank" class="social-link"><img src="linkedin.svg" alt="LinkedIn"></a>
           </div>
         </div>
 
@@ -378,11 +374,11 @@
           <div class="footer-column">
             <h3>Servicios</h3>
             <ul>
-              <li><a href="#services">Desarrollo Web</a></li>
-              <li><a href="#services">Aplicaciones Móviles</a></li>
-              <li><a href="#services">Software de Escritorio</a></li>
-              <li><a href="#services">Soluciones SaaS</a></li>
-              <li><a href="#services">Desarrollo PWA</a></li>
+              <li><a>Desarrollo Web</a></li>
+              <li><a>Aplicaciones Móviles</a></li>
+              <li><a>Software de Escritorio</a></li>
+              <li><a>Soluciones SaaS</a></li>
+              <li><a>Desarrollo PWA</a></li>
             </ul>
           </div>
 
@@ -390,16 +386,16 @@
             <h3>Información de Contacto</h3>
             <div class="contact-info">
               <div class="contact-item">
-                <img src="mail.jpg" alt="Email" class="contact-icon-img">
-                <span>andorasoft.com</span>
+                <img src="mail.svg" alt="Email" class="contact-icon-img">
+                <span>ec.andorasoft@gmail.com</span>
               </div>
               <div class="contact-item">
-                <img src="telefono.png" alt="Teléfono" class="contact-icon-img">
-                <span>+593 00000000</span>
+                <img src="telefono.svg" alt="Teléfono" class="contact-icon-img">
+                <span>+593 963040153</span>
               </div>
               <div class="contact-item">
-                <img src="ubi.png" alt="Ubicación" class="contact-icon-img">
-                <span>Riobamba, CH </span>
+                <img src="ubi.svg" alt="Ubicación" class="contact-icon-img">
+                <span>Riobamba,Ecuador </span>
               </div>
             </div>
           </div>

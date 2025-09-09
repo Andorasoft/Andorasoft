@@ -18,24 +18,81 @@ document.querySelectorAll(".nav a").forEach((link) => {
     }
   })
 })
+ 
 
-// ==============================
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================
+   Modo oscuro - Toggle
+========================== */
+// Seleccionamos el toggle
+const toggle = document.getElementById("darkModeToggle");
+
+// Función para aplicar la preferencia de tema
+function applyTheme(theme) {
+  if (theme === "dark") {
+    document.body.classList.add("dark-mode");
+    navbar.style.background = "rgba(0, 0, 0, 0.6)";
+  } else {
+    document.body.classList.remove("dark-mode");
+    // Chequeamos scroll para light mode
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    navbar.style.background = scrollTop > 100 ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0.8)";
+  }
+}
+
+// Toggle dark mode al hacer click
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+  localStorage.setItem("theme", theme);
+  applyTheme(theme);
+});
+
+// Aplicar tema al cargar la página según localStorage
+window.addEventListener("DOMContentLoaded", () => {
+  const theme = localStorage.getItem("theme") || "light";
+  applyTheme(theme);
+});
+
+// =============================
 // Cambio de fondo del navbar al hacer scroll
-// ==============================
-var navbar = document.getElementById("navbar")
-var lastScrollTop = 0
+// =============================
+var navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (scrollTop > 100) {
-    navbar.style.background = "rgba(255, 255, 255, 0.95)"
+  if (document.body.classList.contains("dark-mode")) {
+    // Dark mode: siempre negro translúcido
+    navbar.style.background = "rgba(0, 0, 0, 0.6)";
   } else {
-    navbar.style.background = "rgba(255, 255, 255, 0.8)"
+    // Light mode: cambia al hacer scroll
+    navbar.style.background = scrollTop > 100 ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0.8)";
   }
+});
 
-  lastScrollTop = scrollTop
-})
+
+
+
+
+
+
+
+
+
+
+
 
 // ==============================
 // Captura y manejo de datos del formulario de contacto
@@ -56,6 +113,14 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   this.reset()
 })
 
+
+
+
+
+
+
+
+
 // ==============================
 // Observer para animaciones al aparecer en pantalla
 // ==============================
@@ -73,6 +138,16 @@ var observer = new IntersectionObserver((entries) => {
   })
 }, observerOptions)
 
+
+
+
+
+
+
+
+
+
+
 // ==============================
 // Inicialización de animaciones para elementos al cargar la página
 // ==============================
@@ -87,6 +162,16 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
+
+
+
+
+
+
+
+
+
+
 // ==============================
 // Efecto parallax suave en Hero Section
 // ==============================
@@ -99,6 +184,16 @@ window.addEventListener("scroll", () => {
     heroContent.style.transform = "translateY(" + scrolled * 0.1 + "px)"
   }
 })
+
+
+
+
+
+
+
+
+
+
 
 // ==============================
 // Animación hover en botones primarios
