@@ -30,6 +30,387 @@
   --black: #000000;
 }
 
+
+
+
+
+
+
+
+/* ==========================
+   Body por defecto (modo claro)
+========================== */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--gray-900);
+  background-color: var(--white);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease; /* transición suave */
+}
+
+
+
+
+
+
+
+
+
+/* ==========================
+   Modo oscuro - Toggle
+========================== */
+.dark-mode-toggle {
+  position: relative;
+  width: 40px;             /* ancho del toggle */
+  height: 20px;            /* alto del toggle */
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+/* Iconos */
+.dark-mode-toggle .icon {
+  width: 14px;
+  height: 14px;
+  stroke: #000;            /* Sol negro */
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.dark-mode-toggle .moon {
+  stroke: #fff;            /* Luna blanca */
+  opacity: 0;
+}
+
+/* Esfera deslizante */
+.toggle-slider {
+  position: absolute;
+  top: 50%;                
+  left: 4px;               /* posición inicial */
+  width: 17px;
+  height: 17px;
+  background-color: #fff;  /* esfera blanca en modo claro */
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  z-index: 1;              
+}
+
+
+
+
+
+
+
+/* ==========================
+   🌑 MODO OSCURO GLOBAL
+========================== */
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+/* Toggle en modo oscuro */
+body.dark-mode .dark-mode-toggle {
+  background-color: #1e293b;  
+}
+
+body.dark-mode .toggle-slider {
+  left: calc(100% - 20px); /* mueve la esfera a la derecha */
+  background-color: #000;  /* esfera negra en modo oscuro */
+}
+
+/* Cambiar iconos sol ↔ luna */
+.dark-mode-toggle .sun {
+  opacity: 1;
+}
+.dark-mode-toggle .moon {
+  opacity: 0;
+}
+body.dark-mode .sun {
+  opacity: 0;
+}
+body.dark-mode .moon {
+  opacity: 1;
+}
+
+
+
+
+
+/* ==========================
+   Secciones en modo 
+========================== */
+
+/* Header scroll claro */
+.header.scroll {
+  background: rgba(255,255,255,0.95);
+}
+
+/* Header scroll dark */
+body.dark-mode .header.scroll {
+  background: rgba(0,0,0,0.6); /* sigue negro translúcido */
+  border-bottom: 1px solid #333;
+}
+
+
+
+
+
+/* ==============================
+   DARK MODE
+============================== */
+
+/* Header */
+body.dark-mode .header {
+  background: rgba(0, 0, 0, 0.6); /* negro traslúcido */
+border-bottom: 1px solid #333;
+}
+
+body.dark-mode .header.scroll {
+  background: rgba(0, 0, 0, 0.85);  /* más opaco si quieres */
+}
+
+
+
+
+body.dark-mode .nav a {
+  color: #f1f1f1;
+}
+
+
+body.dark-mode .nav a:hover {
+  color: #60a5fa; /* azul clarito al pasar */
+}
+
+
+body.dark-mode .btn-primary {
+  background: linear-gradient(135deg, var(--purple-700), var(--blue-700)); /* gradiente más intenso al pasar */
+  color: #000;
+}
+body.dark-mode .btn-secondary {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* Hero Section */
+body.dark-mode .hero {
+  background: #181818;
+}
+body.dark-mode .hero-title {
+  color: #fff;
+}
+body.dark-mode .hero-description {
+  color: #ccc;
+}
+
+/* Services - Modo oscuro */
+body.dark-mode .services {
+  background: #1a1a1a;
+  
+}
+
+
+body.dark-mode .services h2 {
+ background: linear-gradient(135deg, var(--purple-700), var(--blue-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* para compatibilidad */
+  
+}
+
+
+
+body.dark-mode .services p {
+   color: #f1f1f1;
+  
+}
+
+
+
+body.dark-mode .service-card {
+  background: #222;
+  color: #f1f1f1;
+  border: 1px solid #333;
+
+}
+
+
+body.dark-mode .service-card h3 {
+  color: #f1f1f1; /* Títulos de las cards */
+}
+
+body.dark-mode .service-card p {
+  color: #d1d5db; /* Párrafos de las cards, gris claro */
+}
+
+
+
+
+/* Why Choose Us- Modo oscuro */
+body.dark-mode .why-choose-us {
+  background: #181818;
+}
+
+body.dark-mode .why-choose-us h2 {
+  background: linear-gradient(135deg, var(--purple-700), var(--blue-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* para compatibilidad */
+}
+
+body.dark-mode .why-choose-us p {
+color: #f1f1f1;
+
+}
+
+
+body.dark-mode .feature-card {
+  background: #222;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}
+
+
+body.dark-mode .feature-card h3 {
+  color: #f1f1f1; /* Títulos de las cards */
+}
+
+body.dark-mode .feature-card p {
+  color: #d1d5db; /* Párrafos de las cards, gris claro */
+}
+
+
+
+
+/* Testimonials */
+body.dark-mode .testimonials {
+  background: #1a1a1a;
+}
+
+body.dark-mode .testimonials h2 {
+ background: linear-gradient(135deg, var(--purple-700), var(--blue-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* para compatibilidad */
+  
+}
+
+
+
+body.dark-mode .testimonials p {
+   color: #f1f1f1;
+  
+}
+
+
+
+body.dark-mode .testimonial-card {
+  background: #222;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}
+
+/* Portfolio */
+body.dark-mode .portfolio {
+  background: #121212;
+}
+
+body.dark-mode .portfolio  h2 {
+ background: linear-gradient(135deg, var(--purple-700), var(--blue-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* para compatibilidad */
+  
+}
+
+
+
+body.dark-mode .portfolio  p {
+   color: #f1f1f1;
+  
+}
+
+
+
+
+
+
+body.dark-mode .portfolio-item {
+  background: #222;
+  color: #f1f1f1;
+}
+body.dark-mode .portfolio-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Contact */
+body.dark-mode .contact {
+  background: #1a1a1a;
+}
+
+body.dark-mode .contact  h2 {
+ background: linear-gradient(135deg, var(--purple-700), var(--blue-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* para compatibilidad */
+  
+}
+
+
+
+body.dark-mode .contact  p {
+   color: #f1f1f1;
+  
+}
+
+
+
+
+body.dark-mode .contact-form-card {
+  background: #222;
+  border: 1px solid #333;
+}
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #333;
+  border: 1px solid #555;
+  color: #f1f1f1;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bbb;
+}
+
+/* Footer */
+body.dark-mode .footer {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+body.dark-mode .footer a {
+  color: #f1f1f1;
+}
+body.dark-mode .footer-description {
+  color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
 /* ==============================
    RESET Y BASE
 ============================== */
@@ -43,13 +424,11 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.6;
-  color: var(--gray-900);
-  background-color: var(--white);
-  overflow-x: hidden;
-}
+
+
+
+
+
 
 /* ==============================
    UTILIDADES
@@ -87,6 +466,11 @@ body {
   margin: 0 auto;
   line-height: 1.6;
 }
+
+
+
+
+
 
 /* ==============================
    BOTONES
@@ -132,6 +516,12 @@ body {
   padding: 1rem 2rem;
   font-size: 1.125rem;
 }
+
+
+
+
+
+
 
 /* ==============================
    IMÁGENES
@@ -179,6 +569,9 @@ body {
   border-radius: 0.25rem;
 }
 
+
+
+
 /* ==============================
    HEADER
 ============================== */
@@ -188,7 +581,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);   /* % transparente */
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--gray-200);
   transition: all 0.3s ease;
@@ -225,14 +618,14 @@ body {
 }
 
 .nav a {
-  color: var(--gray-600);
+  color: var(--dark-600);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav a:hover {
-  color: var(--purple-600);
+  color: var(--purple-700);
 }
 
 /* ==============================
@@ -240,7 +633,7 @@ body {
 ============================== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 120vh;
   display: flex;
   align-items: center;
   background: linear-gradient(
@@ -324,6 +717,20 @@ body {
   font-weight: 500;
 }
 
+.feature-icon-img {
+  width: 1.5rem;       /* tamaño más pequeño */
+  height: 1.5rem;      /* mantiene proporción cuadrada */
+  border-radius: 50%;   /* hace que sean circulares */
+  object-fit: cover;    /* ajusta la imagen dentro del círculo */
+}
+
+.feature-icon-img2 {
+  width: 4rem;       /* tamaño más pequeño */
+  height: 4rem;      /* mantiene proporción cuadrada */
+  border-radius: 50%;   /* hace que sean circulares */
+  object-fit: cover;    /* ajusta la imagen dentro del círculo */
+}
+
 /* ==============================
    SERVICES SECTION
 ============================== */
@@ -345,8 +752,12 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 1px solid var(--gray-100);
-  text-align: center;
+  text-align: center; 
 }
+
+
+
+
 
 .service-card:hover {
   transform: translateY(-8px);
@@ -388,6 +799,12 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
+
+
+
+
+
+
 
 .feature-card:hover {
   transform: translateY(-4px);
