@@ -50,7 +50,7 @@ function applyTheme(theme) {
     navbar.style.background = scrollTop > 100 ? "rgba(255, 255, 255, 0.95)" : "rgba(255, 255, 255, 0.8)";
   }
 }
-
+ 
 // Toggle dark mode al hacer click
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
