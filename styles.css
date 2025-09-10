@@ -718,13 +718,19 @@ html {
 
 .feature-item {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: center;        /* Alinea verticalmente */
+  justify-content: flex-start;    /* Centra todo el bloque (imagen + texto) horizontalmente */
+  gap: 0.5rem;                /* Espacio entre imagen y texto */
   color: var(--gray-500);
   font-size: 0.9rem;
-  font-weight: 600;
-    
+  font-weight: 400;
+  flex: 1 1 30%;            /* más flexible y responsivo */
+  text-align: left;
+  width: 15rem;
 }
+
+
+
 
 
 
