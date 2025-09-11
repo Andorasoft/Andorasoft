@@ -94,31 +94,6 @@ window.addEventListener("scroll", () => {
 
 
 
-// ==============================
-// Captura y manejo de datos del formulario de contacto
-// ==============================
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault()
-
-  var formData = new FormData(this)
-  var data = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    company: formData.get("company"),
-    project: formData.get("project"),
-  }
-
-  console.log("Datos del formulario:", data)
-  alert("¡Gracias por tu mensaje! Te contactaremos en las próximas 24 horas.")
-  this.reset()
-})
-
-
-
-
-
-
-
 
 
 // ==============================
@@ -207,3 +182,67 @@ document.querySelectorAll(".btn-primary").forEach((btn) => {
     this.style.transform = "translateY(0)"
   })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==============================
+// Captura y manejo de datos del formulario (Vercel)
+// ==============================
+
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const formData = {
+    name: this.name.value,
+    email: this.email.value,
+    company: this.company.value,
+    project: this.project.value,
+  };
+
+  try {
+    const response = await fetch("/api/Data", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      alert("✅ ¡Gracias por tu mensaje! Te contactaremos en las próximas 24 horas.");
+      this.reset();
+    } else {
+      const errorText = await response.text();
+      alert("❌ Error al enviar el mensaje: " + errorText);
+    }
+  } catch (error) {
+    console.error("Error de conexión:", error);
+    alert("⚠️ Error de conexión con el servidor.");
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
