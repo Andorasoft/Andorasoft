@@ -334,7 +334,7 @@ body.dark-mode .portfolio  h2 {
 
 
 body.dark-mode .portfolio h3 {
-  color: #7ec8ff; /* azul claro */
+   background: linear-gradient(135deg, var(--purple-700), var(--blue-700));
 }
 
 
