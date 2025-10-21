@@ -304,6 +304,16 @@ body.dark-mode .testimonials h2 {
   
 }
 
+body.dark-mode .testimonials strong {
+  background: linear-gradient(135deg, var(--purple-700), var(--blue-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* asegura que no haya color heredado */
+}
+
+
+
 
 
 body.dark-mode .testimonials p {
