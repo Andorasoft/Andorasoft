@@ -334,11 +334,13 @@ body.dark-mode .portfolio  h2 {
 
 
 body.dark-mode .portfolio h3 {
-    background: linear-gradient(135deg, var(--purple-700), var(--blue-700));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; /* para compatibilidad */
+  background: linear-gradient(135deg, var(--purple-700), var(--blue-700)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important; /* asegúrate de quitar cualquier color heredado */
 }
+
 
 
 
