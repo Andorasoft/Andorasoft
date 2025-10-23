@@ -1107,11 +1107,12 @@ html {
 
 
 /* ===========================
-       SLIDER INFINITO 
+       SLIDER INFINITO
 ==============================*/
-/* ====== Sección general ====== */
+
+/* ===== Sección general ===== */
 #slider {
-  background: #ffffff;
+  background: #ffffff; /* fondo blanco */
   color: #222;
   padding: 80px 0;
   text-align: center;
@@ -1134,7 +1135,7 @@ html {
   line-height: 1.5;
 }
 
-/* ====== Slider de imágenes ====== */
+/* ===== Slider de imágenes ===== */
 .slider-container {
   position: relative;
   width: 90%;
@@ -1164,7 +1165,7 @@ html {
   transform: scale(1.1);
 }
 
-/* ====== Fade en los lados ====== */
+/* ===== Fade lateral solo en el slider ===== */
 .slider-container::before,
 .slider-container::after {
   content: "";
@@ -1186,17 +1187,17 @@ html {
   background: linear-gradient(to left, #fff 30%, transparent);
 }
 
-/* ====== Animación infinita ====== */
+/* ===== Animación infinita solo para imágenes ===== */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
-/* ====== Responsive ====== */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .slider-track img {
     width: 70px;
@@ -1207,8 +1208,6 @@ html {
     animation: scroll 40s linear infinite;
   }
 }
-
-
 
 
 

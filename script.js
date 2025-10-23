@@ -242,20 +242,20 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 
 
-//=========================
+///=========================
 //     Slider infinity
-//==========================
-const slider = document.querySelector('.slider-container .slider');
+//=========================
+const sliderTrack = document.querySelector('.slider-track');
 
-// duplicar contenido para loop infinito
-slider.innerHTML += slider.innerHTML;
+// duplicar contenido para loop infinito (solo en JS, HTML queda limpio)
+sliderTrack.innerHTML += sliderTrack.innerHTML;
 
 // pausar animación al pasar el mouse
-slider.addEventListener('mouseenter', () => {
-  slider.style.animationPlayState = 'paused';
+sliderTrack.addEventListener('mouseenter', () => {
+  sliderTrack.style.animationPlayState = 'paused';
 });
-slider.addEventListener('mouseleave', () => {
-  slider.style.animationPlayState = 'running';
+sliderTrack.addEventListener('mouseleave', () => {
+  sliderTrack.style.animationPlayState = 'running';
 });
 
 
