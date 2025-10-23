@@ -245,25 +245,18 @@ document.getElementById("contactForm").addEventListener("submit", async function
 //=========================
 //     Slider infinity
 //==========================
+const slider = document.querySelector('.slider-container .slider');
 
+// duplicar contenido para loop infinito
+slider.innerHTML += slider.innerHTML;
 
-// Seleccionamos el slider
-const slider = document.querySelector('#slider .slider');
-
-// Duplicamos el contenido para lograr el loop infinito
-const clone = slider.innerHTML;
-slider.innerHTML += clone;
-
-// Pausa al pasar el mouse
+// pausar animación al pasar el mouse
 slider.addEventListener('mouseenter', () => {
   slider.style.animationPlayState = 'paused';
 });
-
 slider.addEventListener('mouseleave', () => {
   slider.style.animationPlayState = 'running';
 });
-
-
 
 
 
