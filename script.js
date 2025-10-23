@@ -242,6 +242,20 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 
 
+//=========================
+//     Slider infinity
+//==========================
+
+
+
+
+
+
+
+
+
+
+
 
 
 
