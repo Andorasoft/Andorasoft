@@ -1107,15 +1107,12 @@ html {
 
 
 /* ===========================
-       slider infinity
+       SLIDER INFINITO 
 ==============================*/
 
-
-/* --- SLIDER INFINITO --- */
-
 #slider {
-  background: #0a0a0a;
-  color: #fff;
+  background: #ffffff; /* fondo blanco */
+  color: #111; /* texto oscuro */
   padding: 60px 0;
   text-align: center;
   overflow: hidden;
@@ -1128,44 +1125,49 @@ html {
 
 #slider .section-subtitle {
   font-size: 1rem;
-  color: #ccc;
+  color: #444;
   margin-bottom: 40px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* contenedor estático */
 .slider-container {
   position: relative;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
+  background: #ffffff; /* mantiene el fondo blanco */
 }
 
+/* solo las imágenes se mueven */
 .slider {
   display: flex;
   align-items: center;
-  gap: 40px; /* separación entre logos */
+  gap: 40px;
   animation: scroll 30s linear infinite;
 }
 
+/* estilo de imágenes */
 .slider img {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  opacity: 0.6;
+  opacity: 0.7;
   transition: opacity 1s ease, transform 1s ease;
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.15));
 }
 
-/* resalta el logo central (aproximadamente el 9º, centrado en pantalla) */
+/* imagen central ligeramente destacada */
 .slider img:nth-child(9) {
   opacity: 1;
   transform: scale(1.1);
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.25));
 }
 
+/* animación infinita horizontal */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -1175,7 +1177,7 @@ html {
   }
 }
 
-/* Efecto de desvanecimiento a los costados */
+/* degradado de desvanecimiento lateral */
 .slider-container::before,
 .slider-container::after {
   content: "";
@@ -1189,25 +1191,27 @@ html {
 
 .slider-container::before {
   left: 0;
-  background: linear-gradient(to right, #0a0a0a 30%, transparent);
+  background: linear-gradient(to right, #ffffff 30%, transparent);
 }
 
 .slider-container::after {
   right: 0;
-  background: linear-gradient(to left, #0a0a0a 30%, transparent);
+  background: linear-gradient(to left, #ffffff 30%, transparent);
 }
 
-/* Responsive */
+/* responsive */
 @media (max-width: 768px) {
-  .slider img {
-    width: 70px;
-    height: 70px;
-  }
   .slider {
     gap: 25px;
     animation: scroll 40s linear infinite;
   }
+
+  .slider img {
+    width: 70px;
+    height: 70px;
+  }
 }
+
 
 
 
