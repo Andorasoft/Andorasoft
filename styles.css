@@ -1111,6 +1111,103 @@ html {
 ==============================*/
 
 
+/* --- SLIDER INFINITO --- */
+
+#slider {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+#slider .section-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#slider .section-subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slider-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* separación entre logos */
+  animation: scroll 30s linear infinite;
+}
+
+.slider img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 1s ease, transform 1s ease;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+}
+
+/* resalta el logo central (aproximadamente el 9º, centrado en pantalla) */
+.slider img:nth-child(9) {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Efecto de desvanecimiento a los costados */
+.slider-container::before,
+.slider-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.slider-container::before {
+  left: 0;
+  background: linear-gradient(to right, #0a0a0a 30%, transparent);
+}
+
+.slider-container::after {
+  right: 0;
+  background: linear-gradient(to left, #0a0a0a 30%, transparent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider img {
+    width: 70px;
+    height: 70px;
+  }
+  .slider {
+    gap: 25px;
+    animation: scroll 40s linear infinite;
+  }
+}
 
 
 
