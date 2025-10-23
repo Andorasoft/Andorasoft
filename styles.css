@@ -1107,83 +1107,71 @@ html {
 
 
 /* ===========================
-       SLIDER INFINITO 
+       SLIDER INFINITO
 ==============================*/
 
+/* ===== Sección general ===== */
 #slider {
   background: #ffffff; /* fondo blanco */
-  color: #111; /* texto oscuro */
-  padding: 60px 0;
+  color: #222;
+  padding: 80px 0;
   text-align: center;
-  overflow: hidden;
 }
 
-#slider .section-title {
+.section-header {
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-title {
   font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
-#slider .section-subtitle {
+.section-subtitle {
   font-size: 1rem;
-  color: #444;
-  margin-bottom: 40px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #555;
+  line-height: 1.5;
 }
 
-/* contenedor estático */
+/* ===== Slider de imágenes ===== */
 .slider-container {
   position: relative;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
-  background: #ffffff; /* mantiene el fondo blanco */
 }
 
-/* solo las imágenes se mueven */
-.slider {
+.slider-track {
   display: flex;
   align-items: center;
   gap: 40px;
   animation: scroll 30s linear infinite;
 }
 
-/* estilo de imágenes */
-.slider img {
+.slider-track img {
   width: 100px;
   height: 100px;
   object-fit: contain;
   opacity: 0.7;
-  transition: opacity 1s ease, transform 1s ease;
-  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.15));
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.15));
 }
 
-/* imagen central ligeramente destacada */
-.slider img:nth-child(9) {
+.slider-track img:hover {
   opacity: 1;
   transform: scale(1.1);
-  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.25));
 }
 
-/* animación infinita horizontal */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* degradado de desvanecimiento lateral */
+/* ===== Fade lateral solo en el slider ===== */
 .slider-container::before,
 .slider-container::after {
   content: "";
   position: absolute;
   top: 0;
-  width: 150px;
+  width: 120px;
   height: 100%;
   z-index: 2;
   pointer-events: none;
@@ -1191,29 +1179,35 @@ html {
 
 .slider-container::before {
   left: 0;
-  background: linear-gradient(to right, #ffffff 30%, transparent);
+  background: linear-gradient(to right, #fff 30%, transparent);
 }
 
 .slider-container::after {
   right: 0;
-  background: linear-gradient(to left, #ffffff 30%, transparent);
+  background: linear-gradient(to left, #fff 30%, transparent);
 }
 
-/* responsive */
-@media (max-width: 768px) {
-  .slider {
-    gap: 25px;
-    animation: scroll 40s linear infinite;
+/* ===== Animación infinita solo para imágenes ===== */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
-  .slider img {
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .slider-track img {
     width: 70px;
     height: 70px;
   }
+  .slider-track {
+    gap: 25px;
+    animation: scroll 40s linear infinite;
+  }
 }
-
-
-
 
 
 
