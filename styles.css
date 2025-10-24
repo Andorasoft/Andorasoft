@@ -1112,102 +1112,93 @@ html {
 
 /* ===== Sección general ===== */
 #slider {
-  background: #ffffff; /* fondo blanco */
-  color: #222;
-  padding: 80px 0;
-  text-align: center;
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .section-header {
-  max-width: 700px;
-  margin: 0 auto 50px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .section-title {
   font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .section-subtitle {
+  color: #bbb;
   font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
 }
 
-/* ===== Slider de imágenes ===== */
 .slider-container {
-  position: relative;
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .slider-track {
   display: flex;
-  align-items: center;
-  gap: 40px;
-  animation: scroll 30s linear infinite;
+  width: calc(250px * 42); /* 21 duplicadas */
+  animation: scroll 70s linear infinite; /* duración del movimiento */
+}
+
+/* 🖱️ Pausar animación al pasar el mouse */
+.slider-container:hover .slider-track {
+  animation-play-state: paused;
+}
+
+.slider-track a {
+  display: inline-block;
+  margin: 0 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .slider-track img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  opacity: 0.7;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.15));
-}
-
-.slider-track img:hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-/* ===== Fade lateral solo en el slider ===== */
-.slider-container::before,
-.slider-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
   width: 120px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
+  height: auto;
+  opacity: 0.9;
 }
 
-.slider-container::before {
-  left: 0;
-  background: linear-gradient(to right, #fff 30%, transparent);
+.slider-track a:hover {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
-.slider-container::after {
-  right: 0;
-  background: linear-gradient(to left, #fff 30%, transparent);
-}
-
-/* ===== Animación infinita solo para imágenes ===== */
+/* Animación del desplazamiento infinito */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-250px * 21)); /* Mueve mitad del total */
   }
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .slider-track img {
-    width: 70px;
-    height: 70px;
-  }
-  .slider-track {
-    gap: 25px;
-    animation: scroll 40s linear infinite;
-  }
+/* Bordes con degradado */
+#slider::before,
+#slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
 }
+
+#slider::before {
+  left: 0;
+  background: linear-gradient(to right, #0a0a0a 0%, transparent 100%);
+}
+
+#slider::after {
+  right: 0;
+  background: linear-gradient(to left, #0a0a0a 0%, transparent 100%);
+}
+
 
 
 
