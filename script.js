@@ -242,29 +242,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 
 
-///=========================
-//     Slider infinity
-//=========================
-
-
-<script>
-const slider = document.querySelector('.slider-track');
-let paused = false;
-
-slider.parentElement.addEventListener('mouseenter', () => {
-  slider.style.animationPlayState = 'paused';
-  paused = true;
-});
-
-slider.parentElement.addEventListener('mouseleave', () => {
-  paused = false;
-  slider.style.animationPlayState = 'running';
-});
-</script>
-
-
-
-
 
 
 
